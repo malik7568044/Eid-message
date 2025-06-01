@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eid Message for You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+      font-family: 'Special Elite', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #f9f9f9;
+      overflow: hidden;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/stars.png') repeat;
+      animation: moveStars 100s linear infinite;
+      z-index: 0;
+      opacity: 0.3;
+    }
+
+    .moon {
+      position: absolute;
+      top: 60px;
+      right: 60px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at center, #fefcd7 0%, #d9d7a5 80%, transparent 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 30px #fefcd7;
+      z-index: 1;
+    }
+
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: -10000px 5000px; }
+    }
+
+    .container {
+      position: relative;
+      max-width: 700px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+      font-size: 18px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      z-index: 2;
+      backdrop-filter: blur(8px);
+    }
+
+    #typed {
+      border-right: .15em solid #f9f9f9;
+      white-space: pre-wrap;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_3f5e46b64f.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <div class="stars"></div>
+  <div class="moon"></div>
+  <div class="container">
+    <div id="typed"></div>
+  </div>
+
+  <script>
+    const message = `Eid Mubarak, [Her Name]
+
+Today, the moon smiles brighter, the skies stretch a little wider,
+and even the wind hums a gentler tune —
+as if the universe itself pauses for a moment to celebrate souls like yours.
+
+On this blessed day, I won’t speak of love that waits or wishes —
+I’ll speak only of the light you carry,
+the quiet grace with which you move through this world,
+and the peace you bring to hearts without even trying.
+
+You may not know it — or perhaps you do —
+but in your laughter, there’s a kind of prayer,
+and in your silence, a kind of poetry.
+
+I have loved — yes — but more than that,
+I have learned from you the calm strength of patience,
+the beauty of simplicity,
+and the joy of seeing someone bloom just as they are meant to,
+even from a respectful distance.
+
+May this Eid bring you the kind of happiness that feels like home,
+the kind of peace that doesn’t need noise,
+and the kind of love that wraps itself quietly around your soul,
+asking for nothing in return.
+
+You are thought of, prayed for, and appreciated —
+without expectation, without condition —
+just wholeheartedly, and always.
+
+Eid Mubarak once again.
+May Allah keep you smiling always.
+
+— Yours, quietly and sincerely,
+[Your Name]`;
+
+    let i = 0;
+    function typeWriter() {
+      if (i < message.length) {
+        document.getElementById("typed").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 30);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
