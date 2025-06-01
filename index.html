@@ -6,18 +6,17 @@
   <title>Eid Message for You</title>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
-      font-family: 'Special Elite', monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: #f9f9f9;
-      overflow: hidden;
-    }
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+  font-family: 'Special Elite', monospace;
+  color: #f9f9f9;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
 
     .stars {
       position: absolute;
@@ -47,18 +46,14 @@
     }
 
     .container {
-      position: relative;
-      max-width: 700px;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
-      font-size: 18px;
-      line-height: 1.6;
-      white-space: pre-wrap;
-      z-index: 2;
-      backdrop-filter: blur(8px);
-    }
+  position: relative;
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  ...
+}
+
 
     #typed {
       border-right: .15em solid #f9f9f9;
@@ -110,7 +105,7 @@ Eid Mubarak once again.
 May Allah keep you smiling always.
 
 — Yours, quietly and sincerely,
-[Your Name]`;
+[Abdul Wassay]`;
 
     let i = 0;
     function typeWriter() {
