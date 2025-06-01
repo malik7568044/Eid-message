@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eid Message for You</title>
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet" />
   <style>
     html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
-  font-family: 'Special Elite', monospace;
-  color: #f9f9f9;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
-
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+      font-family: 'Special Elite', monospace;
+      color: #f9f9f9;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
 
     .stars {
-      position: absolute;
+      position: fixed;
       width: 100%;
       height: 100%;
       background: url('https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/stars.png') repeat;
@@ -29,7 +28,7 @@
     }
 
     .moon {
-      position: absolute;
+      position: fixed;
       top: 60px;
       right: 60px;
       width: 100px;
@@ -46,30 +45,51 @@
     }
 
     .container {
-  position: relative;
-  max-width: 700px;
-  margin: 100px auto;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.08);
-  ...
-}
-
+      position: relative;
+      max-width: 700px;
+      margin: 150px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      font-size: 18px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      z-index: 2;
+    }
 
     #typed {
       border-right: .15em solid #f9f9f9;
       white-space: pre-wrap;
       overflow: hidden;
     }
+
+    .audio-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid #fff;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-family: inherit;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <audio autoplay loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_3f5e46b64f.mp3" type="audio/mpeg">
-
-</audio>
-
   <div class="stars"></div>
   <div class="moon"></div>
+
+  <audio id="eidMusic" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_3f5e46b64f.mp3" type="audio/mpeg" />
+  </audio>
+
+  <button class="audio-btn" onclick="document.getElementById('eidMusic').play(); this.style.display='none';">🔊 Click to Play Music</button>
+
   <div class="container">
     <div id="typed"></div>
   </div>
